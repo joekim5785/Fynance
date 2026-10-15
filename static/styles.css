@@ -1,0 +1,134 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+body
+{
+    background-color: #641433;
+}
+
+/*  Navbar blended with #641433 (original markup)  */
+body {
+  background-color: #641433;
+}
+
+nav.navbar,
+nav.navbar.navbar-light {
+  --bs-navbar-color: #e8c9d6;
+  --bs-navbar-hover-color: #ffffff;
+  --bs-navbar-active-color: #ffffff;
+  --bs-navbar-brand-color: #ffffff;
+  --bs-navbar-brand-hover-color: #ffffff;
+  --bs-navbar-toggler-border-color: #8a3a5c;
+  padding-block: 0.6rem;
+}
+
+/* Beats Bootstrap's bg-light and border classes */
+nav.navbar {
+  background-color: #52102a !important;
+  border: 0 !important;
+  border-bottom: 1px solid #7a2a4b !important;
+}
+
+nav.navbar .navbar-brand,
+nav.navbar .navbar-brand span {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+nav.navbar .nav-link {
+  border-radius: 8px;
+  color: #e8c9d6;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+}
+
+nav.navbar .nav-link:hover,
+nav.navbar .nav-link:focus-visible,
+nav.navbar .nav-link.active {
+  background-color: #6a1b3d;
+  color: #ffffff;
+}
+
+/* The hamburger icon is dark by default, so flip it to white */
+nav.navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+
+
+
+/*  Tables blended with #641433  */
+.table {
+  --bs-table-color: #ffffff;
+  --bs-table-bg: #701a3d;
+  --bs-table-striped-color: #ffffff;
+  --bs-table-striped-bg: #7a2247;
+  --bs-table-hover-color: #ffffff;
+  --bs-table-hover-bg: #86294f;
+  --bs-table-border-color: #8f4a69;
+}
+
+.table thead th {
+  background-color: #52102a;
+  border-bottom: 2px solid #8f4a69;
+  color: #f3dce6;
+}
+
+/*  Form fields blended with #641433  */
+.form-control,
+.form-select {
+  background-color: #4a0e26;
+  border-color: #8a3a5c;
+  color: #ffffff;
+}
+
+.form-control::placeholder {
+  color: #c9a3b5;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #4a0e26;
+  border-color: #f3d3df;
+  box-shadow: 0 0 0 0.2rem #8a3a5c;
+  color: #ffffff;
+}
+
+/* Light dropdown arrow, since the default one is dark */
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23f3d3df' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.form-select option {
+  background-color: #4a0e26;
+  color: #ffffff;
+}
+
+/* Stops Chrome's autofill from turning fields pale yellow */
+.form-control:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #4a0e26 inset;
+  -webkit-text-fill-color: #ffffff;
+}

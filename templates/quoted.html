@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+   <body class="container py-5 text-center">
+    <P style="color: white;">
+        A share of {{stock.name}} ({{ stock.symbol }}) is trading at {{ stock.price | usd }}.
+    </p>
+
+</body>
+{% endblock %}
