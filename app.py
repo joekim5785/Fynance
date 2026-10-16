@@ -67,10 +67,8 @@ def index():
 def buy():
     """Buy shares of stock"""
 
-    if request.method == "GET":
-        return render_template("buy.html")
-
-    else:
+    if request.method == "POST":
+        
         symbol = request.form.get("symbol").strip().upper()
         stock = lookup(symbol)
 
@@ -156,6 +154,8 @@ def buy():
         )
 
         return redirect("/")
+    else:
+        return render_template("buy.html")
 
 
 @app.route("/history")
@@ -232,11 +232,7 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    # request method is get
-    if request.method == "GET":
-        return render_template("quote.html")
-
-    else:
+    if request.method == "POST":
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
         if not symbol:
@@ -245,6 +241,8 @@ def quote():
             return apology("Invalid symbol", 400)
 
         return render_template("quoted.html", stock=stock)
+    else:
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -298,9 +296,7 @@ def sell():
         "SELECT symbol,shares FROM purchases  WHERE user_id = ?", session["user_id"])
     sale_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    if request.method == "GET":
-        return render_template("sell.html", user_stocks=user_stocks)
-    else:
+    if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
@@ -363,6 +359,8 @@ def sell():
             sale_time
         )
         return redirect("/")
+    else:
+        return render_template("sell.html", user_stocks=user_stocks)
 
 
 @app.route("/change_password", methods=["GET", "POST"])
